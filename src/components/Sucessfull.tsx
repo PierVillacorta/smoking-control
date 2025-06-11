@@ -3,7 +3,7 @@ import { Fragment } from "react/jsx-runtime";
 import { useUserStore } from "../store/store";
 
 const Sucessfull = () => {
-  const { sucessfull,day,appReset } = useUserStore();
+  const { sucessfull, day, appReset } = useUserStore();
 
   return (
     <div className="max-w-3xl mx-auto py-">
@@ -11,7 +11,7 @@ const Sucessfull = () => {
         <Dialog
           as="div"
           className="relative z-10"
-          onClose={() =>  true}
+          onClose={() => true}
         >
           <Transition.Child
             as={Fragment}
@@ -39,7 +39,7 @@ const Sucessfull = () => {
                 <Dialog.Panel className="w-full max-w-3xl transform overflow-hidden rounded-2xl bg-slate-800 p-6 text-left align-middle shadow-xl transition-all">
                   <div className="flex flex-col items-center justify-center relative">
                     <button
-                      className="absolute top-0 right-2 font-bold text-red-500 text-2xl  rounded-full w-10 h-10 bg-white/10 cursor-pointer"
+                      className={`absolute top-0 right-2 font-bold text-[#F] text-2xl  rounded-full w-10 h-10 bg-white/10 cursor-pointer ${sucessfull ? "hidden" : ""} `}
                       onClick={() =>
                         useUserStore.setState({ sucessfull: false })
                       }
@@ -47,21 +47,24 @@ const Sucessfull = () => {
                       X
                     </button>
                     <div className="mt-10 mb-10">
-                    <p className="text-green-500 text-4xl font-bold text-center">
-                      Lograste completar el día {day} de tu
-                      control de consumo. ¡Felicidades!
-                    </p>
+                      <p className="text-green-500 text-4xl font-bold text-center">
+                        Lograste completar el día {day} de tu
+                        control de consumo. ¡Felicidades!
+                      </p>
+                      <div className=" w-full h-96 ">
+                        <img src="/public/aplausos.gif" className="w-96 h-full mx-auto mt-10"/>
+                      </div>  
                     </div>
                     <p className="text-yellow-300 text-center text-xl uppercase">
                       Deseas restaurar la aplicación para comenzar de nuevo?
                     </p>
-                      <button
-                      onClick={() =>{
+                    <button
+                      onClick={() => {
                         appReset();
                         useUserStore.setState({ sucessfull: false });
-                      }} className="bg-red-800 text-white px-10 py-5 rounded-lg mt-5 hover:bg-red-700 uppercase font-bold cursor-pointer">
-                        Restaurar aplicación
-                      </button>
+                      }} className={`bg-red-800 text-white px-10 py-5 rounded-lg mt-5 hover:bg-red-700 uppercase font-bold cursor-pointer `}>
+                      Restaurar aplicación
+                    </button>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>

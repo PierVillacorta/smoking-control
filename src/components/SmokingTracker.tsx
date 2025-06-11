@@ -23,7 +23,7 @@ const SmokingTracker = () => {
         />
       </div>
       <button 
-      onClick={() =>appReset }
+      onClick={() =>appReset() }
       className="bg-red-800 text-white px-10 py-5 rounded-lg mt-5 hover:bg-red-700 uppercase font-bold cursor-pointer">
         Reset app
       </button>
