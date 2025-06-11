@@ -2,6 +2,7 @@ import { create } from "zustand";
 import type { Notes, User } from "../types";
 
 type UserState = {
+  sucessfull: boolean;
   day: Notes["day"];
   accomplished: User["accomplished"];
   showModal: User["accomplished"];
@@ -10,9 +11,11 @@ type UserState = {
   notesDay: Notes[];
   addUser: (data: User) => void;
   addNotes: (notes: Notes) => void;
+  appReset: () => void;
 };
 
 export const useUserStore = create<UserState>((set) => ({
+  sucessfull: false,
   accomplished: false,
   user: [],
   day: 1,
@@ -36,4 +39,12 @@ export const useUserStore = create<UserState>((set) => ({
       day: isAcomplished ? state.day + 1 : 1,
     }));
   },
+  appReset:() => {
+    set(() => ({
+      sucessfull: false,
+      day: 1,
+      notesDay: [],
+      accomplished: false,
+    }))
+  }
 }));

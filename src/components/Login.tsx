@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { useUserStore } from "../store/store";
 import type { User } from "../types";
 import Error from "./Error";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { addUser } = useUserStore();
@@ -12,6 +13,7 @@ const Login = () => {
   } = useForm<User>();
   const registerUser = (data: User) => {
     addUser(data);
+    toast.success(`Ingresaste correctamente ${data.name}`);
   };
 
   return (

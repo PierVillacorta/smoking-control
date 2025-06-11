@@ -1,12 +1,18 @@
 import { useForm } from "react-hook-form";
 import { useUserStore } from "../store/store";
 import type { Notes } from "../types";
+import Error from "./Error";
 
 const FormModal = () => {
-  const { register, handleSubmit } = useForm<Notes>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Notes>();
   const { addNotes, day } = useUserStore();
   const registerNote = (data: Notes) => {
     addNotes(data);
+    useUserStore.setState({ showModal: errors.content ? true : false });
   };
 
   return (
@@ -45,6 +51,7 @@ const FormModal = () => {
           <option value="true">Si</option>
           <option value="false">No</option>
         </select>
+        {errors.achieved && <Error>{errors.achieved.message}</Error>}
       </div>
       <div>
         <label htmlFor="noteDay" className="text-1xl uppercase font-bold">
@@ -62,12 +69,13 @@ const FormModal = () => {
             },
           })}
         ></textarea>
+        {errors.content && <Error>{errors.content.message}</Error>}
       </div>
       <div>
         <button
           type="submit"
-          className="bg-red-900 w-full p-2 rounded-lg uppercase font-bold cursor-pointer"
-          onClick={() => useUserStore.setState({ showModal: false })}
+          className="bg-red-900 w-full p-2 rounded-lg uppercase font-bold cursor-pointer "
+         
         >
           Enviar
         </button>
