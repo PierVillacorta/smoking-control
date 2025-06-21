@@ -6,7 +6,7 @@ const SmokingTracker = () => {
   const { user, day ,appReset} = useUserStore();
   const { date } = user[0];
   const color =
-    day === date / 2 ? "#ff8b00" : day === date - 5 ? "#64ff00" : " #FF0005";
+    day === date / 3 ? "#ff8b00" : day === date - 5 ? "#64ff00" : " #FF0005";
   
   return (
     <div className="flex flex-col items-center justify-center w-1/2 h-full ">
@@ -24,12 +24,8 @@ const SmokingTracker = () => {
       </div>
       <button 
       onClick={() =>appReset() }
-<<<<<<< HEAD
       className="bg-red-800 text-white md:px-10 md:py-5 px-5 py-3 rounded-lg mt-5 hover:bg-red-700 uppercase font-bold cursor-pointer">
-=======
-      className="bg-red-800 text-white px-10 py-5 rounded-lg mt-5 hover:bg-red-700 uppercase font-bold cursor-pointer">
->>>>>>> a851bc56f5387e4dca930ff361e9908fc5eabe81
-        Reset app
+        Reset
       </button>
     </div>
   );

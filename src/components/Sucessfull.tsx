@@ -1,26 +1,14 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment } from "react/jsx-runtime";
+import { Fragment } from "react";
 import { useUserStore } from "../store/store";
 
-const Sucessfull = () => {
-<<<<<<< HEAD
-  const { sucessfull,  appReset } = useUserStore();
-=======
+const Successful = () => {
   const { sucessfull, day, appReset } = useUserStore();
->>>>>>> a851bc56f5387e4dca930ff361e9908fc5eabe81
 
   return (
     <div className="max-w-3xl mx-auto py-">
       <Transition appear show={sucessfull} as={Fragment}>
-<<<<<<< HEAD
         <Dialog as="div" className="relative z-10" onClose={() => true}>
-=======
-        <Dialog
-          as="div"
-          className="relative z-10"
-          onClose={() => true}
-        >
->>>>>>> a851bc56f5387e4dca930ff361e9908fc5eabe81
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -46,48 +34,29 @@ const Sucessfull = () => {
               >
                 <Dialog.Panel className="w-full max-w-3xl transform overflow-hidden rounded-2xl bg-slate-800 p-6 text-left align-middle shadow-xl transition-all">
                   <div className="flex flex-col items-center justify-center relative">
-<<<<<<< HEAD
                     <div className="flex flex-col items-center justify-center">
                       <p className="text-green-500 text-4xl font-bold text-center">
-                        Lograste completar tus dias de control de
-                        consumo. ¡Felicidades!
+                        Lograste completar tus días de control de consumo.
+                        ¡Felicidades!
                       </p>
-                      <img className="w-96 mt-4" src="/public/tenor.gif" alt="clap aplausos " />
+                      <img
+                        className="w-96 mt-4"
+                        src="/tenor.gif"
+                        alt="aplausos"
+                      />
                     </div>
-              
-=======
-                    <button
-                      className={`absolute top-0 right-2 font-bold text-[#F] text-2xl  rounded-full w-10 h-10 bg-white/10 cursor-pointer ${sucessfull ? "hidden" : ""} `}
-                      onClick={() =>
-                        useUserStore.setState({ sucessfull: false })
-                      }
-                    >
-                      X
-                    </button>
-                    <div className="mt-10 mb-10">
-                      <p className="text-green-500 text-4xl font-bold text-center">
-                        Lograste completar el día {day} de tu
-                        control de consumo. ¡Felicidades!
-                      </p>
-                      <div className=" w-full h-96 ">
-                        <img src="/public/aplausos.gif" className="w-96 h-full mx-auto mt-10"/>
-                      </div>  
-                    </div>
+
                     <p className="text-yellow-300 text-center text-xl uppercase">
-                      Deseas restaurar la aplicación para comenzar de nuevo?
+                      ¿Deseas restaurar la aplicación para comenzar de nuevo?
                     </p>
->>>>>>> a851bc56f5387e4dca930ff361e9908fc5eabe81
+
                     <button
                       onClick={() => {
                         appReset();
                         useUserStore.setState({ sucessfull: false });
-<<<<<<< HEAD
                       }}
-                      className="bg-red-800 text-white px-10 py-5 rounded-lg  hover:bg-red-700 uppercase font-bold cursor-pointer"
+                      className="bg-red-800 text-white px-10 py-5 rounded-lg hover:bg-red-700 uppercase font-bold cursor-pointer mt-4"
                     >
-=======
-                      }} className={`bg-red-800 text-white px-10 py-5 rounded-lg mt-5 hover:bg-red-700 uppercase font-bold cursor-pointer `}>
->>>>>>> a851bc56f5387e4dca930ff361e9908fc5eabe81
                       Restaurar aplicación
                     </button>
                   </div>
@@ -101,4 +70,4 @@ const Sucessfull = () => {
   );
 };
 
-export default Sucessfull;
+export default Successful;

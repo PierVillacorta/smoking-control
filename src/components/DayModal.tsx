@@ -4,21 +4,29 @@ import { Dialog, Transition } from "@headlessui/react";
 import { useUserStore } from "../store/store";
 import FormModal from "./FormModal";
 const DayModal = () => {
-    const { showModal } = useUserStore();
+  const { showModal } = useUserStore();
   return (
     <div className="max-w-3xl mx-auto py-">
-      <div className={`fixed right-10 bottom-10 flex items-center justify-center `}>
-        <button type="button" className="cursor-pointer" onClick={() => useUserStore.setState({ showModal: true })}>
-<<<<<<< HEAD
+      <div
+        className={`fixed right-10 bottom-10 flex items-center justify-center `}
+      >
+        <button
+          type="button"
+          className="cursor-pointer"
+          onClick={() => useUserStore.setState({ showModal: true })}
+        >
           <PlusCircleIcon className="w-16 h-16  text-red-700 rounded-full" />
-=======
-          <PlusCircleIcon className={`w-16 h-16 text-red-700 rounded-full `} />
->>>>>>> a851bc56f5387e4dca930ff361e9908fc5eabe81
         </button>
-      </div>  
+      </div>
 
       <Transition appear show={showModal} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={() => {useUserStore.setState({ showModal: false, accomplished: false })}}>
+        <Dialog
+          as="div"
+          className="relative z-10"
+          onClose={() => {
+            useUserStore.setState({ showModal: false, accomplished: false });
+          }}
+        >
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
