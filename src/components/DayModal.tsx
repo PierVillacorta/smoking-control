@@ -9,9 +9,13 @@ const DayModal = () => {
     <div className="max-w-3xl mx-auto py-">
       <div className={`fixed right-10 bottom-10 flex items-center justify-center `}>
         <button type="button" className="cursor-pointer" onClick={() => useUserStore.setState({ showModal: true })}>
+<<<<<<< HEAD
           <PlusCircleIcon className="w-16 h-16  text-red-700 rounded-full" />
+=======
+          <PlusCircleIcon className={`w-16 h-16 text-red-700 rounded-full `} />
+>>>>>>> a851bc56f5387e4dca930ff361e9908fc5eabe81
         </button>
-      </div>
+      </div>  
 
       <Transition appear show={showModal} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={() => {useUserStore.setState({ showModal: false, accomplished: false })}}>
@@ -38,7 +42,7 @@ const DayModal = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-3xl transform overflow-hidden rounded-2xl bg-slate-900 p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-3xl transform overflow-hidden rounded-2xl bg-slate-800 p-6 text-left align-middle shadow-xl transition-all">
                   <FormModal />
                 </Dialog.Panel>
               </Transition.Child>
