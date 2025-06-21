@@ -10,7 +10,7 @@ const SmokingTracker = () => {
   
   return (
     <div className="flex flex-col items-center justify-center w-1/2 h-full ">
-      <div className="w-70 aspect-square ">
+      <div className="md:w-70 w-50 aspect-square ">
         <CircularProgressbar
           maxValue={date}
           value={day}
@@ -23,8 +23,8 @@ const SmokingTracker = () => {
         />
       </div>
       <button 
-      onClick={() =>appReset }
-      className="bg-red-800 text-white px-10 py-5 rounded-lg mt-5 hover:bg-red-700 uppercase font-bold cursor-pointer">
+      onClick={() =>appReset() }
+      className="bg-red-800 text-white md:px-10 md:py-5 px-5 py-3 rounded-lg mt-5 hover:bg-red-700 uppercase font-bold cursor-pointer">
         Reset app
       </button>
     </div>

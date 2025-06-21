@@ -19,10 +19,10 @@ const Login = () => {
   return (
     <div className="h-screen flex items-center justify-center">
       <form
-        className="bg-slate-900 text-white p-8 rounded-2xl shadow-md w-full max-w-md "
+        className="bg-slate-900 text-white p-8 rounded-2xl shadow-md w-full md:max-w-md w-100px "
         onSubmit={handleSubmit(registerUser)}
       >
-        <p className="text-3xl text-center  uppercase font-black mb-8">
+        <p className="md:text-3xl text-2xl text-center  uppercase font-black mb-8">
           Iniciar sesión
         </p>
         <div className="mb-5">

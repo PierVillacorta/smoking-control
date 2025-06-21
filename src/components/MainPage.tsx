@@ -11,19 +11,19 @@ import Sucessfull from "./Sucessfull";
 const MainPage = () => {
   const { notesDay ,day} = useUserStore();
   useEffect(() => {
-      if (day === 2) {
+      if (day === 3) {
         useUserStore.setState({ sucessfull: true });
       }
     }, [day]);
   return (
     <main className="xl:max-w-4xl mx-auto">
-      <h1 className="text-4xl text-center text-white font-bold mt-10 uppercase">
+      <h1 className="md:text-4xl text-2xl text-center text-white font-bold mt-10 uppercase">
         Control de consumo
       </h1>
       {
         <Sucessfull/>
       }
-      <div className="flex   bg-slate-900  rounded-2xl  mx-auto mt-10 py-5 gap-4">
+      <div className="flex  md:flex-row  items-center flex-col bg-slate-900  rounded-2xl  mx-auto mt-10 py-5 gap-4">
         <Statistics />
         <SmokingTracker />
 

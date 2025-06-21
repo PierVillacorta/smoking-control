@@ -15,12 +15,16 @@ const RandomQuote = () => {
       useUserStore.setState({
         quote: quote,
       });
-    }, 1000);
+    }, 5000);
     return () => clearInterval(interval);
+    ``;
   }, []);
 
   return (
-    <div className="text-white md:max-w-3xl p-4  text-1xl font-bold uppercase ">
+    <div
+      className="text-white md:max-w-3xl max-w-2xl text-center p-4 text-1xl font-bold uppercase"
+      style={{ textShadow: "2px 2px 4px #72120d " }}
+    >
       <p>{quote}</p>
     </div>
   );

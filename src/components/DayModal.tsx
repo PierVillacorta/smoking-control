@@ -7,9 +7,9 @@ const DayModal = () => {
     const { showModal } = useUserStore();
   return (
     <div className="max-w-3xl mx-auto py-">
-      <div className={`fixed right-5 bottom-5 flex items-center justify-center `}>
+      <div className={`fixed right-10 bottom-10 flex items-center justify-center `}>
         <button type="button" className="cursor-pointer" onClick={() => useUserStore.setState({ showModal: true })}>
-          <PlusCircleIcon className="w-16 h-16 text-slate-900 rounded-full" />
+          <PlusCircleIcon className="w-16 h-16  text-red-700 rounded-full" />
         </button>
       </div>
 
