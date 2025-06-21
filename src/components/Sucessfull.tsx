@@ -2,8 +2,8 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { useUserStore } from "../store/store";
 
-const Successful = () => {
-  const { sucessfull, day, appReset } = useUserStore();
+const Successfull = () => {
+  const { sucessfull, appReset } = useUserStore();
 
   return (
     <div className="max-w-3xl mx-auto py-">
@@ -70,4 +70,4 @@ const Successful = () => {
   );
 };
 
-export default Successful;
+export default Successfull;
